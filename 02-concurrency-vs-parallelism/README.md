@@ -11,14 +11,11 @@ make
 # if you modify any cpp file, you need to re-run make (`cmake ..` does not need to be re-run, just `make`)
 ```
 
-## Before you start
-
 Both programs take a thread count as their first argument, and both print how
-many cores your machine reports. Write that number down.
-
-If a run seems way too slow, you can pass a smaller problem size as a second
-argument (e.g. `./estimate_pi 1 100000000`). Just use the same size for every
-run or your times will not be comparable.
+many cores your machine reports. Write that number down. If a run seems way too
+slow, you can pass a smaller problem size as a second argument (e.g.
+`./estimate_pi 1 100000000`), but use the same size for every run or your times
+will not be comparable.
 
 
 ## Part 1: estimate_pi
