@@ -1,10 +1,3 @@
-// count_primes.cpp
-//
-// Counts how many prime numbers there are below LIMIT, the slow and obvious
-// way: for every number, try dividing it by everything up to its square root.
-//
-// Usage: ./count_primes [limit]
-
 #include <chrono>
 #include <cstdio>
 #include <cstdlib>
