@@ -14,8 +14,14 @@ void think(int id) {
   std::this_thread::sleep_for(std::chrono::milliseconds(20 + id * 7));
 }
 
+void acquire_fork(int fork_id) {
+  forks[fork_id].lock();
+  // Simulate the time it takes to pick up a fork
+  std::this_thread::sleep_for(std::chrono::milliseconds(50));
+}
+
 void take_forks(int left_fork, int right_fork) {
-  // TODO
+  // TODO: to get a fork use acquire_fork(fork_id)
 }
 
 void eat(int id) {
