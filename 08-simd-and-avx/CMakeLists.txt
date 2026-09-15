@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.10)
+project(lecture-code)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_FLAGS "-Wall -O2 -Wextra")
+
+add_executable(add src/add.cpp)
+add_executable(contrast src/contrast.cpp)
+add_executable(difference src/difference.cpp)
+add_executable(simd_info src/simd_info.cpp)
+
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+  target_compile_options(add PRIVATE -fno-tree-vectorize)
+  target_compile_options(contrast PRIVATE -fno-tree-vectorize)
+  target_compile_options(difference PRIVATE -fno-tree-vectorize)
+elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  target_compile_options(add PRIVATE -fno-vectorize -fno-slp-vectorize)
+  target_compile_options(contrast PRIVATE -fno-vectorize -fno-slp-vectorize)
+  target_compile_options(difference PRIVATE -fno-vectorize -fno-slp-vectorize)
+endif()
