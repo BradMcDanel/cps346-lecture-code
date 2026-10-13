@@ -16,6 +16,11 @@ int main(int argc, char **argv) {
   MPI_Init(&argc, &argv);
 
   Image image;
+
+  // If I wanted to write a black row to the image, this is how.. but this isn't the right starting conditions!
+  std::vector<double> rod(N, 0.0);
+  image.add_row(rod);
+
   // TODO
 
   image.save("rod.bmp", 1);

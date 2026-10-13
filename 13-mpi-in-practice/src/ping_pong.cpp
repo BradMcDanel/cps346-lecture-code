@@ -6,12 +6,14 @@
 #include <mpi.h>
 #include <vector>
 
-// One round trip is two one-way trips.
+// One round trip is two one-way trips :p
 double one_way_seconds(char *buf, int bytes, int reps, int rank) {
+  // Read up on what MPI_Barrier does here
   MPI_Barrier(MPI_COMM_WORLD);
   double start = MPI_Wtime();
   for (int r = 0; r < reps; r++) {
-    // TODO: rank 0 sends buf to rank 1, then rank 1 sends it back.
+    // TODO: rank 0 sends buf to rank 1
+    // Then rank 1 sends it back
   }
   return (MPI_Wtime() - start) / reps / 2;
 }
@@ -23,6 +25,7 @@ int main(int argc, char **argv) {
 
   std::vector<char> buf(16 << 20, 1);
 
+  // Don't worry about this part.. just for printing.. just update the one_way_seconds function above
   if (rank == 0)
     printf("%12s %14s %14s\n", "bytes", "time (us)", "GB/s");
   for (int bytes = 8; bytes <= (16 << 20); bytes *= 8) {
