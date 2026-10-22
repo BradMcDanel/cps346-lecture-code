@@ -16,3 +16,6 @@ target_compile_options(ping_pong PRIVATE -Wno-unused-parameter)
 
 add_executable(heat src/heat.cpp)
 target_link_libraries(heat PRIVATE MPI::MPI_CXX)
+
+add_executable(heat_solution src/heat_solution.cpp)
+target_link_libraries(heat_solution PRIVATE MPI::MPI_CXX)
