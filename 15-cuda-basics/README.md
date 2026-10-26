@@ -15,14 +15,14 @@ cmake -S . -B build
 cmake --build build
 ```
 
-## Part 1: who am I?
+## Part 1: hello
 
 Before each run, predict what it will print.
 
 ```sh
-./build/whoami
-./build/whoami 3 4
-./build/whoami 1 2048
+./build/hello
+./build/hello 3 4
+./build/hello 1 2048
 ```
 
 ## Part 2: add one
