@@ -18,7 +18,4 @@ cmake --build build
 ./build/add_one 1 32
 
 ./build/elementwise_add
-
-./build/vector_add 1000
-./build/vector_add 50000000
 ```
