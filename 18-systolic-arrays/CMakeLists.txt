@@ -27,6 +27,8 @@ endif()
 include(FetchContent)
 set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(BUILD_GAMES OFF CACHE BOOL "" FORCE)
+# Always build the GLFW copy that ships with raylib (not one from brew or apt)
+set(USE_EXTERNAL_GLFW OFF CACHE STRING "" FORCE)
 FetchContent_Declare(raylib
   URL https://github.com/raysan5/raylib/archive/refs/tags/5.5.tar.gz)
 FetchContent_MakeAvailable(raylib)

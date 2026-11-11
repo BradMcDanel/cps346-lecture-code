@@ -2,6 +2,13 @@
 
 ## Build
 
+macOS only, once (installs the compiler and cmake):
+
+```sh
+xcode-select --install
+brew install cmake
+```
+
 Linux and WSL only, once:
 
 ```sh
